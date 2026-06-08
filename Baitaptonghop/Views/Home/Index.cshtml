@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="text-center">
+    <h2>Chào mừng đến với Website quản lý sinh viên</h2>
+    <p class="lead">Ứng dụng ASP.NET MVC - Bài tập tổng hợp CRUD</p>
+    <a asp-controller="Student" asp-action="Index" class="btn btn-primary btn-lg mt-3">
+        Quản lý sinh viên
+    </a>
+</div>
+
+@section Scripts {
+    <script>
+        console.log("Trang chủ đã được tải");
+    </script>
+}
