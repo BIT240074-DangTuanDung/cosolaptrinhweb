@@ -1,0 +1,35 @@
+@model IEnumerable<lession2.Models.Book>
+
+@{
+    ViewData["Title"] = "Danh sách sách";
+}
+
+<h2>Danh sách sách</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Name</td>
+                <td>@book.Price</td>
+                <td>
+                    <a asp-action="Detail" asp-route-id="@book.Id">Chi tiết</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Thêm sách mới</a>
+</p>
