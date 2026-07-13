@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện Trang Tin Tức - Gộp 1 File</title>
+
+    <style>
+        /* Reset định dạng cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* --- 1. Style cho Thanh Điều Hướng (Navbar) --- */
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 5%;
+            border-bottom: 1px solid #e5e5e5;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+            .navbar a {
+                text-decoration: none;
+                color: #222;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+                .navbar a:hover {
+                    color: #9c27b0;
+                }
+
+        .home-icon {
+            font-size: 18px;
+        }
+
+        /* --- Bố cục chính (Container) --- */
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* --- 2. Style cho Tin Tiêu Điểm --- */
+        .main-news {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .main-news-image {
+            flex: 1.2;
+        }
+
+            .main-news-image img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+        .main-news-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+            .main-news-content h2 {
+                font-size: 28px;
+                line-height: 1.3;
+                margin-bottom: 15px;
+                color: #111;
+                cursor: pointer;
+            }
+
+                .main-news-content h2:hover {
+                    color: #757575;
+                }
+
+            .main-news-content .summary {
+                font-size: 15px;
+                line-height: 1.5;
+                color: #4a4a4a;
+                margin-bottom: 15px;
+            }
+
+            .main-news-content .time {
+                font-size: 12px;
+                color: #b0b0b0;
+            }
+
+        /* Đường gạch ngang phân cách */
+        .divider {
+            border: 0;
+            border-top: 1px solid #e8e8e8;
+            margin: 25px 0;
+        }
+
+        /* --- 3. Style cho Lưới Tin Phụ Phía Dưới --- */
+        .sub-news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+        }
+
+        /* Style chung cho 2 cột tin thường */
+        .sub-news-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+            .sub-news-card h3 {
+                font-size: 16px;
+                line-height: 1.4;
+                color: #111;
+                order: 1;
+                cursor: pointer;
+            }
+
+            .sub-news-card img {
+                width: 100%;
+                height: 160px;
+                object-fit: cover;
+                order: 2;
+            }
+
+        /* Style riêng cho Cột Góc Nhìn */
+        .opinion-card {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-top: 2px solid #b82745;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .opinion-card .category-title {
+                color: #b82745;
+                font-weight: bold;
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            .opinion-card h3 {
+                font-size: 18px;
+                margin-bottom: 8px;
+                color: #111;
+            }
+
+            .opinion-card p {
+                font-size: 13px;
+                color: #555;
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+
+        .author-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #777;
+        }
+
+            .author-meta .author {
+                font-style: italic;
+                font-weight: bold;
+            }
+
+        /* Responsive di động */
+        @media (max-width: 768px) {
+            .main-news {
+                flex-direction: column;
+            }
+
+            .sub-news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="home-icon">🏠</a>
+        <a href="#">VnE-GO</a>
+        <a href="#">Thời sự</a>
+        <a href="#">Thế giới</a>
+        <a href="#">Kinh doanh</a>
+        <a href="#">Khoa học công nghệ</a>
+        <a href="#">Góc nhìn</a>
+        <a href="#">Spotlight</a>
+        <a href="#">Bất động sản</a>
+        <a href="#">Sức khỏe</a>
+        <a href="#">Giải trí</a>
+        <a href="#">Thể thao</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="main-news">
+            <div class="main-news-image">
+                <img src="Anh/anh1.webp" alt="Trục cảnh quan sông Hồng">
+            </div>
+            <div class="main-news-content">
+                <h2>'Ưu tiên tái định cư trước khi triển khai Trục cảnh quan sông Hồng'</h2>
+                <p class="summary">
+                    Hà Nội sẽ ưu tiên xây dựng các khu tái định cư trước khi triển khai Trục Đại lộ cảnh quan sông Hồng - dự án hơn 11.400 ha, liên quan khoảng 247.000 dân ven sông, thực hiện giai đoạn 2026-2038.
+                </p>
+                <span class="time">1h trước</span>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section class="sub-news-grid">
+
+            <article class="sub-news-card">
+                <h3>Hà Nội giải phóng mặt bằng cho hơn 1.400 dự án</h3>
+                <img src="hAnh/anh2.webp" alt="Giải phóng mặt bằng">
+            </article>
+
+            <article class="sub-news-card">
+                <h3>TP HCM siết kiểm soát người nhập cảnh phòng Ebola</h3>
+                <img src="Anh/anh3.jpg" alt="Kiểm soát sân bay">
+            </article>
+
+            <article class="opinion-card">
+                <span class="category-title">Góc nhìn</span>
+                <h3>'Bóc lột' trên YouTube</h3>
+                <p>Khi cỗ máy Content ID của YouTube bị trục trặc, nhiều nghệ sĩ...</p>
+                <div class="author-meta">
+                    <span class="author">Hoàng Hà</span>
+                    <span class="comments">💬 24</span>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+</body>
+</html>
