@@ -1,5 +1,0 @@
-wwwroot\index.html
-wwwroot\Anh\anh1.webp
-wwwroot\Anh\anh2.webp
-wwwroot\Anh\anh3.jpg
-C:\Users\dangt\OneDrive\Desktop\LapTrinhWeb\Buoione\Buoione\wwwroot\index.html
